@@ -180,5 +180,8 @@ for m in l1_ratio_possible:
     print('R^2 train: %.3f, test: %.3f' % (
         r2_score(y_train, y_train_pred),
         r2_score(y_test, y_test_pred)))
+print("My name is Jiayong Huang")
+print("My NetID is: Jiayong2")
+print("I hereby certify that I have read the University policy on Academic Integrity and that I am not in violation.")
     
  # Summary
