@@ -11,6 +11,7 @@ from sklearn.tree import DecisionTreeClassifier
 import pandas as pd
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import StratifiedKFold
+import time
 
 df_wine = pd.read_csv('https://archive.ics.uci.edu/'
 'ml/machine-learning-databases/'
@@ -32,10 +33,11 @@ kfold = StratifiedKFold(n_splits=10,random_state=1).split(X_train,y_train)
 for i in [20, 50, 100, 200, 1000]:
     forest = RandomForestClassifier(n_estimators=i,random_state=1)
     
-    
+    time_start = time.clock()
     scores = cross_val_score(estimator=forest,X=X,y=y,cv=10)
+   
     print('Score=',np.mean(scores),'in n_estimators=', i )
-    
+    print('Computation Time=',time.clock() - time_start)
     
 feat_labels = df_wine.columns[1:]
 forest2=forest = RandomForestClassifier(n_estimators=200,random_state=1)
