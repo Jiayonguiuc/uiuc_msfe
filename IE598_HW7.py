@@ -49,7 +49,7 @@ for f in range(X_train.shape[1]):
     
 plt.title('Feature Importance')
 plt.bar(range(X_train.shape[1]),importances[indices],align='center')
-plt.xticks(range(X_train.shape[1]),feat_labels, rotation=90)
+plt.xticks(range(X_train.shape[1]),feat_labels[indices], rotation=90)
 plt.xlim([-1, X_train.shape[1]])
 plt.tight_layout()
 plt.show()
@@ -57,3 +57,4 @@ plt.show()
 print("My name is {Jiayong Huang}")
 print("My NetID is: {jiayong2}")
 print("I hereby certify that I have read the University policy on Academic Integrity and that I am not in violation.")
+
